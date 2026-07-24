@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const icons: Record<string, React.ReactNode> = {
   "fix-flip": (
@@ -35,27 +36,44 @@ export function StrategyCard({
   strategyKey,
   title,
   summary,
+  image,
+  imageAlt,
 }: {
   strategyKey: string;
   title: string;
   summary: string;
+  image?: string;
+  imageAlt?: string;
 }) {
   return (
-    <div className="flex flex-col rounded-xl border border-border bg-white p-7">
-      <span className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-warmgray text-gold">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          {icons[strategyKey]}
-        </svg>
-      </span>
-      <h3 className="mt-5 font-display text-xl text-charcoal">{title}</h3>
-      <p className="mt-3 flex-1 text-sm leading-relaxed text-slate">{summary}</p>
-      <Link
-        href="/what-we-do"
-        className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-gold hover:underline"
-      >
-        Learn how it works
-        <span aria-hidden="true">→</span>
-      </Link>
+    <div className="flex flex-col overflow-hidden rounded-xl border border-border bg-white">
+      {image && (
+        <div className="relative aspect-[16/10] overflow-hidden bg-warmgray">
+          <Image
+            src={image}
+            alt={imageAlt ?? ""}
+            fill
+            sizes="(max-width: 768px) 100vw, 33vw"
+            className="object-cover"
+          />
+        </div>
+      )}
+      <div className="flex flex-1 flex-col p-7">
+        <span className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-warmgray text-gold">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            {icons[strategyKey]}
+          </svg>
+        </span>
+        <h3 className="mt-5 font-display text-xl text-charcoal">{title}</h3>
+        <p className="mt-3 flex-1 text-sm leading-relaxed text-slate">{summary}</p>
+        <Link
+          href="/what-we-do"
+          className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-gold hover:underline"
+        >
+          Learn how it works
+          <span aria-hidden="true">→</span>
+        </Link>
+      </div>
     </div>
   );
 }

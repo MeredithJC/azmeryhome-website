@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { pageMetadata } from "@/lib/seo";
 import { Container } from "@/components/ui/Container";
 
@@ -37,6 +38,20 @@ export default function HomePage() {
     <>
       {/* 5.1 Hero */}
       <section className="relative overflow-hidden bg-charcoal text-white">
+        {/* Atmospheric background image (stock, for mood only — spec §17) */}
+        <Image
+          src="/stock/hero-home-interior.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center"
+        />
+        {/* Dark gradient overlay keeps text at strong contrast (WCAG AA) */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-gradient-to-r from-charcoal via-charcoal/90 to-charcoal/70"
+        />
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 opacity-[0.07]"
@@ -126,6 +141,8 @@ export default function HomePage() {
                 strategyKey={s.key}
                 title={s.title}
                 summary={s.summary}
+                image={s.image}
+                imageAlt={s.imageAlt}
               />
             ))}
           </div>

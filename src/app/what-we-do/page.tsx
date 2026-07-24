@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { PageHero } from "@/components/PageHero";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -31,20 +32,31 @@ export default function WhatWeDoPage() {
 
       <section className="bg-white">
         <Container className="py-16 sm:py-20">
-          <div className="space-y-12">
+          <div className="space-y-14">
             {strategies.map((s, i) => (
               <article
                 key={s.key}
-                className="grid gap-6 border-b border-border pb-12 last:border-0 last:pb-0 md:grid-cols-[auto_1fr] md:gap-10"
+                className="grid items-center gap-8 md:grid-cols-2 md:gap-12"
               >
-                <div className="text-5xl font-bold text-gold/30 font-display">
-                  0{i + 1}
+                <div className={i % 2 === 1 ? "md:order-2" : undefined}>
+                  <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-warmgray">
+                    <Image
+                      src={s.image}
+                      alt={s.imageAlt}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-cover"
+                    />
+                  </div>
                 </div>
                 <div>
-                  <h2 className="font-display text-2xl text-charcoal">
+                  <span className="font-display text-5xl font-bold text-gold/30">
+                    0{i + 1}
+                  </span>
+                  <h2 className="mt-2 font-display text-2xl text-charcoal">
                     {s.title}
                   </h2>
-                  <p className="mt-3 max-w-3xl text-lg leading-relaxed text-slate">
+                  <p className="mt-3 text-lg leading-relaxed text-slate">
                     {s.summary}
                   </p>
                 </div>

@@ -98,25 +98,35 @@ export const audiences = [
   },
 ] as const;
 
-/** The three investment strategies (spec §5.3, §8). */
+/**
+ * The three investment strategies (spec §5.3, §8).
+ * `image` is atmospheric stock imagery for illustration only — kept separate
+ * from the real portfolio/listings (spec §17). See public/stock/CREDITS.md.
+ */
 export const strategies = [
   {
     key: "fix-flip",
     title: "Fix & Flip",
     summary:
       "We acquire selected residential properties with improvement potential, complete thoughtful renovation work, and return the home to the market when resale is the best strategy.",
+    image: "/stock/strategy-fix-flip-kitchen.jpg",
+    imageAlt: "A renovated kitchen with new cabinetry, counters and fixtures",
   },
   {
     key: "buy-hold",
     title: "Buy & Hold",
     summary:
       "We acquire selected residential properties for long-term ownership when the asset supports the company's investment criteria and long-term objectives.",
+    image: "/stock/strategy-buy-hold-living.jpg",
+    imageAlt: "A bright, open living room and kitchen in a residential home",
   },
   {
     key: "rentals",
     title: "Rentals",
     summary:
       "Selected properties may operate as long-term or short-term/furnished rentals when the property, location, demand, regulations and strategy support it.",
+    image: "/stock/strategy-rentals-living.jpg",
+    imageAlt: "A comfortable, furnished living room in a rental home",
   },
 ] as const;
 
