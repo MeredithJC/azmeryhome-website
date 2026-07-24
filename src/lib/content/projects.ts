@@ -13,17 +13,19 @@ export const projects: Project[] = [
   {
     slug: "de-priest",
     title: "The De Priest Renovation",
-    status: "renovation",
-    generalLocation: "Houston, Texas",
+    status: "for-sale",
+    generalLocation: "Lincoln City, Houston, TX 77088",
     strategy: "fix-flip",
     facts: {
-      // PLACEHOLDER: replace with approved property facts.
+      beds: 3,
+      baths: 2,
+      squareFeet: 1560,
       propertyType: "Single-family residence",
     },
     opportunity:
-      "PLACEHOLDER — Add the approved summary of what made the De Priest property worth pursuing: its condition, location, and renovation potential. Use only owner-approved facts (spec §10, §24).",
+      "AZMERYHOME identified 8414 De Priest — a solid brick single-family home on an unusually large, private lot in the Lincoln City area of northwest Houston — as a strong candidate for a full cosmetic and systems refresh. Its four-sides brick construction and generous, tree-lined lot gave us a durable, classic home to build on.",
     renovationSummary:
-      "PLACEHOLDER — Add a practical overview of the renovation scope (the kinds of improvements made). Do not include confidential cost data unless intentionally published (spec §10).",
+      "We modernized the home throughout while preserving its classic brick character: a new roof, a new HVAC system, and new wood flooring across the entire house. The kitchen was updated with new appliances, and we added a new front fence for privacy and improved curb appeal.",
     beforeImages: [
       {
         src: "/projects/de-priest/placeholder-before.svg",
@@ -43,7 +45,7 @@ export const projects: Project[] = [
       },
     ],
     outcome:
-      "PLACEHOLDER — Add the approved current status / outcome for this project.",
+      "The renovated three-bedroom, two-bath home is currently offered for sale in northwest Houston.",
     featured: true,
     seo: {
       title: "The De Priest Renovation | AZMERYHOME Houston Project",
