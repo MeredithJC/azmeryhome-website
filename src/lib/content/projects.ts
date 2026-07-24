@@ -28,22 +28,42 @@ export const projects: Project[] = [
       "We modernized the home throughout while preserving its classic brick character: a new roof, a new HVAC system, and new wood flooring across the entire house. The kitchen was updated with new appliances, and we added a new front fence for privacy and improved curb appeal.",
     beforeImages: [
       {
-        src: "/projects/de-priest/placeholder-before.svg",
-        alt: "De Priest property before renovation — photo to be provided",
+        src: "/projects/de-priest/before/before-08.jpg",
+        alt: "8414 De Priest Street exterior before renovation — brick home with an overgrown lot",
       },
-    ],
-    duringImages: [
       {
-        src: "/projects/de-priest/placeholder-during.svg",
-        alt: "De Priest property during renovation — photo to be provided",
+        src: "/projects/de-priest/before/before-01.jpg",
+        alt: "Kitchen before renovation, in its original condition",
       },
-    ],
-    afterImages: [
       {
-        src: "/projects/de-priest/placeholder-after.svg",
-        alt: "De Priest property after renovation — photo to be provided",
+        src: "/projects/de-priest/before/before-05.jpg",
+        alt: "Kitchen and living area before renovation",
+      },
+      {
+        src: "/projects/de-priest/before/before-04.jpg",
+        alt: "Open living area before renovation, showing ceiling damage",
+      },
+      {
+        src: "/projects/de-priest/before/before-03.jpg",
+        alt: "Bedroom before renovation, in its original condition",
+      },
+      {
+        src: "/projects/de-priest/before/before-06.jpg",
+        alt: "Second bedroom before renovation",
+      },
+      {
+        src: "/projects/de-priest/before/before-07.jpg",
+        alt: "Third bedroom before renovation",
+      },
+      {
+        src: "/projects/de-priest/before/before-02.jpg",
+        alt: "Bathroom before renovation, in its original condition",
       },
     ],
+    // Photos captured during renovation can be added here later.
+    duringImages: [],
+    // After (renovated) photos pending owner-provided files.
+    afterImages: [],
     outcome:
       "The renovated three-bedroom, two-bath home is currently offered for sale in northwest Houston.",
     featured: true,

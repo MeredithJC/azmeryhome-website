@@ -46,6 +46,11 @@ export default async function ProjectPage({
   if (!project) notFound();
 
   const placeholder = isPlaceholderProject(project);
+  const isReal = (imgs: { src: string }[]) =>
+    imgs.length > 0 && !imgs[0].src.includes("placeholder");
+  const hasBefore = isReal(project.beforeImages);
+  const hasAfter = isReal(project.afterImages);
+  const hasDuring = isReal(project.duringImages);
   const linkedProperty = project.linkedPropertySlug
     ? getPropertyBySlug(project.linkedPropertySlug)
     : undefined;
@@ -129,19 +134,61 @@ export default async function ProjectPage({
               </p>
             </section>
 
-            <section>
-              <h2 className="font-display text-2xl text-charcoal">
-                Before &amp; after
-              </h2>
-              <div className="mt-4">
-                <BeforeAfter
-                  before={project.beforeImages[0]}
-                  after={project.afterImages[0]}
-                />
-              </div>
-            </section>
+            {hasBefore && hasAfter && (
+              <section>
+                <h2 className="font-display text-2xl text-charcoal">
+                  Before &amp; after
+                </h2>
+                <div className="mt-4">
+                  <BeforeAfter
+                    before={project.beforeImages[0]}
+                    after={project.afterImages[0]}
+                  />
+                </div>
+              </section>
+            )}
 
-            {project.duringImages.length > 0 && (
+            {hasBefore && (
+              <section>
+                <h2 className="font-display text-2xl text-charcoal">
+                  The property before
+                </h2>
+                <p className="mt-2 text-slate">
+                  The home in its original condition, before AZMERYHOME&apos;s
+                  renovation.
+                </p>
+                <div className="mt-4">
+                  <Gallery images={project.beforeImages} />
+                </div>
+              </section>
+            )}
+
+            {hasAfter && (
+              <section>
+                <h2 className="font-display text-2xl text-charcoal">
+                  After renovation
+                </h2>
+                <div className="mt-4">
+                  <Gallery images={project.afterImages} />
+                </div>
+              </section>
+            )}
+
+            {!hasBefore && !hasAfter && (
+              <section>
+                <h2 className="font-display text-2xl text-charcoal">
+                  Before &amp; after
+                </h2>
+                <div className="mt-4">
+                  <BeforeAfter
+                    before={project.beforeImages[0]}
+                    after={project.afterImages[0]}
+                  />
+                </div>
+              </section>
+            )}
+
+            {hasDuring && (
               <section>
                 <h2 className="font-display text-2xl text-charcoal">
                   During renovation
