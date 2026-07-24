@@ -1,5 +1,20 @@
 import Link from "next/link";
+import { pageMetadata } from "@/lib/seo";
 import { Container } from "@/components/ui/Container";
+
+const homeMeta = pageMetadata({
+  title: "AZMERYHOME | Houston Residential Real Estate Investment Company",
+  description:
+    "AZMERYHOME LLC acquires, renovates and manages residential properties throughout Greater Houston — fix & flip, buy & hold, and rentals. Sell a property or view homes for sale.",
+  path: "/",
+});
+export const metadata = {
+  ...homeMeta,
+  // Bypass the layout's "%s | AZMERYHOME" template for the home page.
+  title: {
+    absolute: "AZMERYHOME | Houston Residential Real Estate Investment Company",
+  },
+};
 import { ButtonLink } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { CTABand } from "@/components/CTABand";
