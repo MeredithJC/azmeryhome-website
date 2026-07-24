@@ -44,7 +44,48 @@ export const properties: Property[] = [
       "New wood flooring throughout",
       "New kitchen appliances (refrigerator, oven, microwave)",
     ],
-    gallery: [], // Photos pending: add owner-provided files under public/properties/8414-de-priest-st/
+    heroImage: {
+      src: "/projects/de-priest/after/after-03.jpg",
+      alt: "Renovated exterior of 8414 De Priest Street — white brick home with a new roof",
+    },
+    gallery: [
+      {
+        src: "/projects/de-priest/after/after-07.jpg",
+        alt: "Renovated kitchen with a center island, quartz counters and pendant lighting",
+      },
+      {
+        src: "/projects/de-priest/after/after-04.jpg",
+        alt: "Kitchen with new stainless steel appliances and white shaker cabinets",
+      },
+      {
+        src: "/projects/de-priest/after/after-10.jpg",
+        alt: "Kitchen island with a stainless sink and pendant lights",
+      },
+      {
+        src: "/projects/de-priest/after/after-05.jpg",
+        alt: "Open living area flowing into the kitchen with new wood-look flooring",
+      },
+      {
+        src: "/projects/de-priest/after/after-08.jpg",
+        alt: "Bright living room with a new front door and windows",
+      },
+      {
+        src: "/projects/de-priest/after/after-01.jpg",
+        alt: "Renovated bedroom with fresh paint and new flooring",
+      },
+      {
+        src: "/projects/de-priest/after/after-06.jpg",
+        alt: "Second bedroom with a ceiling fan and new flooring",
+      },
+      {
+        src: "/projects/de-priest/after/after-09.jpg",
+        alt: "Entry hallway with new doors and flooring",
+      },
+      {
+        src: "/projects/de-priest/after/after-02.jpg",
+        alt: "Fenced backyard with fresh sod",
+      },
+    ],
     mapQuery: "8414 De Priest St, Houston, TX 77088",
     listingAgent: {
       name: "Karelle Guedou",

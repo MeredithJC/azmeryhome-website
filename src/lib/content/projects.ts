@@ -62,8 +62,48 @@ export const projects: Project[] = [
     ],
     // Photos captured during renovation can be added here later.
     duringImages: [],
-    // After (renovated) photos pending owner-provided files.
-    afterImages: [],
+    afterImages: [
+      {
+        src: "/projects/de-priest/after/after-03.jpg",
+        alt: "8414 De Priest Street exterior after renovation — white brick home with a new roof",
+      },
+      {
+        src: "/projects/de-priest/after/after-07.jpg",
+        alt: "Renovated kitchen with a center island, quartz counters and pendant lighting",
+      },
+      {
+        src: "/projects/de-priest/after/after-04.jpg",
+        alt: "Kitchen with new stainless steel appliances and white shaker cabinets",
+      },
+      {
+        src: "/projects/de-priest/after/after-05.jpg",
+        alt: "Open living area flowing into the kitchen after renovation",
+      },
+      {
+        src: "/projects/de-priest/after/after-08.jpg",
+        alt: "Bright living room with a new front door and windows after renovation",
+      },
+      {
+        src: "/projects/de-priest/after/after-01.jpg",
+        alt: "Renovated bedroom with fresh paint and new flooring",
+      },
+      {
+        src: "/projects/de-priest/after/after-06.jpg",
+        alt: "Second bedroom with a ceiling fan and new flooring",
+      },
+      {
+        src: "/projects/de-priest/after/after-09.jpg",
+        alt: "Entry hallway with new doors and flooring after renovation",
+      },
+      {
+        src: "/projects/de-priest/after/after-10.jpg",
+        alt: "Renovated kitchen island with a stainless sink and pendant lights",
+      },
+      {
+        src: "/projects/de-priest/after/after-02.jpg",
+        alt: "Fenced backyard with fresh sod",
+      },
+    ],
     outcome:
       "The renovated three-bedroom, two-bath home is currently offered for sale in northwest Houston.",
     featured: true,
