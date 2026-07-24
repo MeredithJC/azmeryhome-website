@@ -52,7 +52,7 @@ export const projects: Project[] = [
       description:
         "A Houston-area fix & flip renovation project by AZMERYHOME. Case study with before, during and after highlights.",
     },
-    // linkedPropertySlug: "de-priest", // set when an associated property page exists
+    linkedPropertySlug: "8414-de-priest-st",
   },
 ];
 

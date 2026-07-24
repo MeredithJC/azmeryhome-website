@@ -217,7 +217,17 @@ export default async function PropertyPage({
                 {property.listingAgent.brokerage && (
                   <p>{property.listingAgent.brokerage}</p>
                 )}
-                <p className="mt-1">{property.listingAgent.contact}</p>
+                {property.listingAgent.license && (
+                  <p>{property.listingAgent.license}</p>
+                )}
+                <p className="mt-1">
+                  <a
+                    href={`tel:${property.listingAgent.contact.replace(/[^\d+]/g, "")}`}
+                    className="text-gold hover:underline"
+                  >
+                    {property.listingAgent.contact}
+                  </a>
+                </p>
               </div>
             )}
           </aside>

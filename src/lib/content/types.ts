@@ -53,7 +53,13 @@ export interface Property {
   /** Optional map/location embed data (spec §6.2). */
   mapQuery?: string;
   /** Only when represented by a licensed listing agent and display is approved. */
-  listingAgent?: { name: string; contact: string; brokerage?: string };
+  listingAgent?: {
+    name: string;
+    contact: string;
+    brokerage?: string;
+    /** License number for attribution, e.g. "TREC #0837337". */
+    license?: string;
+  };
   publishedAt: string; // ISO date
   soldAt?: string; // ISO date
   seo: SeoMeta;

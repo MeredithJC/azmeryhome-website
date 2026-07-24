@@ -11,7 +11,57 @@ import type { Property } from "./types";
  * supplies a real listing (address, price, listing-agent info, photos — spec
  * §24), add it here with status "for-sale" or "coming-soon".
  */
-export const properties: Property[] = [];
+export const properties: Property[] = [
+  {
+    slug: "8414-de-priest-st",
+    status: "for-sale",
+    publicLocation: "8414 De Priest Street",
+    city: "Houston",
+    state: "TX",
+    zip: "77088",
+    price: 204999,
+    beds: 3,
+    baths: 2,
+    squareFeet: 1560,
+    propertyType: "Single-family residence",
+    shortDescription:
+      "A fully updated 3-bed, 2-bath brick home on a large, private lot in northwest Houston.",
+    fullDescription: [
+      "Freshly renovated and move-in ready, this three-bedroom, two-bath home in the Lincoln City area of northwest Houston pairs classic brick construction with modern updates throughout.",
+      "Inside, you'll find new wood flooring across the entire home, a bright living area, and an updated kitchen with new appliances. Outside, a generous, tree-lined lot offers real privacy — including a newly installed front fence and a peaceful backyard view.",
+    ],
+    features: [
+      "Brick exterior on all four sides",
+      "Large 0.16-acre lot with mature trees",
+      "Newly installed front fence",
+      "Driveway gate",
+      "Open living area",
+      "Move-in ready",
+    ],
+    renovationHighlights: [
+      "New roof",
+      "New HVAC system",
+      "New wood flooring throughout",
+      "New kitchen appliances (refrigerator, oven, microwave)",
+    ],
+    gallery: [], // Photos pending: add owner-provided files under public/properties/8414-de-priest-st/
+    mapQuery: "8414 De Priest St, Houston, TX 77088",
+    listingAgent: {
+      name: "Karelle Guedou",
+      brokerage: "HomeSmart",
+      contact: "281-617-6023",
+      license: "TREC #0837337",
+    },
+    publishedAt: "2026-07-23",
+    seo: {
+      title:
+        "8414 De Priest St, Houston TX 77088 | Renovated Home for Sale | AZMERYHOME",
+      description:
+        "Fully renovated 3-bed, 2-bath brick home on a large private lot in northwest Houston. New roof, HVAC, flooring and kitchen appliances. Offered by AZMERYHOME.",
+    },
+    linkedProjectSlug: "de-priest",
+  },
+];
 
 /*
  * ---------------------------------------------------------------------------
