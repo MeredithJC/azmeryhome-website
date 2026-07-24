@@ -6,6 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import type { LeadType } from "@/lib/site";
 import { formConfigs } from "@/lib/forms/configs";
+import { trackLeadSubmit } from "@/lib/analytics";
 import { Field } from "./Fields";
 import { Button } from "@/components/ui/Button";
 
@@ -69,6 +70,8 @@ export function LeadForm({
         throw new Error(body?.error || "Something went wrong. Please try again.");
       }
 
+      // Record the conversion by lead type before navigating (spec §14, §20).
+      trackLeadSubmit(leadType, propertyRef);
       router.push(`/thank-you/${leadType}`);
     } catch (err) {
       setSubmitError(
