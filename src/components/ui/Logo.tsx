@@ -1,40 +1,41 @@
 import Link from "next/link";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 /**
- * AZMERYHOME logo: a stylized roof/house mark paired with the wordmark as live
- * text (spec §3). The wordmark uses `currentColor` so it inverts cleanly on
- * dark backgrounds; the roof mark is warm gold. Replace the inline mark with
- * the approved logo files when provided (spec §24) — the descriptive tagline is
- * intentionally kept as live HTML elsewhere, not baked into this mark.
+ * AZMERYHOME logo (spec §5). Uses the official brand artwork extracted to a
+ * transparent PNG. Two production variants:
+ *  - default (dark tone): full-color logo for light backgrounds (header)
+ *  - light tone: reversed logo for dark backgrounds (footer)
+ * The tagline is kept as separate live text elsewhere, not baked into the mark.
  */
 export function Logo({
   className,
   tone = "dark",
 }: {
   className?: string;
-  /** "dark" = charcoal wordmark (light bg); "light" = white wordmark (dark bg). */
+  /** "dark" = full-color logo (light bg); "light" = reversed logo (dark bg). */
   tone?: "dark" | "light";
 }) {
+  const src =
+    tone === "light"
+      ? "/brand/azmeryhome-logo-light.png"
+      : "/brand/azmeryhome-logo.png";
   return (
-    <Link
-      href="/"
-      aria-label="AZMERYHOME — home"
-      className={cn(
-        "group inline-flex items-center gap-2.5",
-        tone === "light" ? "text-white" : "text-charcoal",
-        className,
-      )}
-    >
-      <RoofMark className="h-8 w-8 shrink-0 text-gold" />
-      <span className="text-lg font-bold tracking-[0.02em] font-display">
-        AZMERY<span className="text-gold">HOME</span>
-      </span>
+    <Link href="/" aria-label="AZMERYHOME LLC — home" className="inline-flex">
+      <Image
+        src={src}
+        alt="AZMERYHOME LLC"
+        width={880}
+        height={437}
+        priority
+        className={cn("h-11 w-auto", className)}
+      />
     </Link>
   );
 }
 
-/** Roof / house monogram mark (also usable as favicon/app icon source). */
+/** Roof / house monogram mark, used for decorative accents across the site. */
 export function RoofMark({ className }: { className?: string }) {
   return (
     <svg
@@ -43,7 +44,6 @@ export function RoofMark({ className }: { className?: string }) {
       aria-hidden="true"
       className={className}
     >
-      {/* Roofline */}
       <path
         d="M6 24 L24 8 L42 24"
         stroke="currentColor"
@@ -51,7 +51,6 @@ export function RoofMark({ className }: { className?: string }) {
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-      {/* House body */}
       <path
         d="M11 22 V40 H37 V22"
         stroke="currentColor"
@@ -59,7 +58,6 @@ export function RoofMark({ className }: { className?: string }) {
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-      {/* Door */}
       <path
         d="M21 40 V30 H27 V40"
         stroke="currentColor"
